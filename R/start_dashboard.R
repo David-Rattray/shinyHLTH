@@ -3,12 +3,12 @@
 #' Creates golem directory and header from template info
 #'
 #' @export
-graveler_dashboard <- function(path,...) {
+start_dashboard <- function(path,...) {
   # ensure path exists
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
 
-  file.copy( # copies graveler folder
-    system.file("extdata/.", package = "graveler", mustWork = TRUE),
+  file.copy( # copies shinyHLTH folder
+    system.file("extdata/.", package = "shinyHLTH", mustWork = TRUE),
     path,
     recursive = TRUE
   )
@@ -37,6 +37,7 @@ graveler_dashboard <- function(path,...) {
 
   url <- "https://www.rstudio.com/products/connect/"
 
+  # edit this for MoH / HSPP guidelines
   header <- c(
     "header <- function() {",
     "\tdashboardHeader(",

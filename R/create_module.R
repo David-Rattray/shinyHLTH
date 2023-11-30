@@ -1,10 +1,8 @@
-#' Graveler Module
-#'
 #' Creates module of the specified name
 #'
 #' @export
 
-level_up <- function(name, pkg = get_graveler_wd(), open = TRUE, dir_create = TRUE){
+create_module <- function(name, pkg = get_wd(), open = TRUE, dir_create = TRUE){
   library(golem)
   library(cli)
 

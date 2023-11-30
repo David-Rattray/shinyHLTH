@@ -1,4 +1,4 @@
-set_graveler_wd <- function (path, talkative = TRUE)
+set_wd <- function (path, talkative = TRUE)
 {
   path <- normalizePath(path)
   if (talkative) {

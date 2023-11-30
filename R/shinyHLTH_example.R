@@ -11,9 +11,9 @@
 #'  geodude_example()
 #'
 #' }
-geodude_example <- function() { # nocov start
+shinyHLTH_example <- function() { # nocov start
   if (!requireNamespace(package = "shinydashboard"))
     message("Package 'shinydashboard' is required to run this function")
-  shiny::shinyAppDir(system.file("examples/geodude", package = "graveler", mustWork = TRUE))
+  shiny::shinyAppDir(system.file("examples/demo_dash", package = "shinyHLTH", mustWork = TRUE))
 }
 # nocov end
