@@ -6,6 +6,12 @@
 start_dashboard <- function(path,...) {
   # ensure path exists
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
+  
+  usethis::create_project(path,
+                          rstudio = rstudioapi::isAvailable(),
+                          roxygen = TRUE,
+                          check_name = FALSE,
+                          open = rlang::is_interactive())
 
   file.copy( # copies shinyHLTH folder
     system.file("extdata/.", package = "shinyHLTH", mustWork = TRUE),
@@ -53,3 +59,12 @@ start_dashboard <- function(path,...) {
   writeLines(header, con = file.path(paste0(path, "/R"), "header.R"))
 
 }
+# 
+# Version: 1.0
+# 
+# RestoreWorkspace: No
+# SaveWorkspace: No
+# AlwaysSaveHistory: Default
+# 
+# EnableCodeIndexing: Yes
+# Encoding: UTF-8
