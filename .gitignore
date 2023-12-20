@@ -6,3 +6,4 @@
 .projectile
 *.Rproj
 /document
+development.R

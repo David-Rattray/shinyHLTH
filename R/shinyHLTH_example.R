@@ -1,4 +1,4 @@
-#' @title Launch a small graveler example
+#' @title Launch an example dashboard
 #'
 #' @description A gallery of widgets available in the package.
 #'
@@ -8,7 +8,7 @@
 #' @examples
 #' if (interactive()) {
 #'
-#'  geodude_example()
+#'  shinyHLTH_example()
 #'
 #' }
 shinyHLTH_example <- function() { # nocov start
