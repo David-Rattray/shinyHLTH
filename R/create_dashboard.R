@@ -29,6 +29,7 @@ create_dashboard <- function(path) {
     paste("Title:"),
     "Version: 0.0.0",
     paste("Author:"),
+    paste("Maintainer:"),
     "Description: Your Description Here",
     "Encoding: UTF-8",
     "LazyData: true"
