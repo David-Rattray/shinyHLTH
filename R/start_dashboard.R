@@ -14,8 +14,7 @@ start_dashboard <- function(path,...) {
   )
 
   # https://stackoverflow.com/questions/26126027/script-for-creating-a-new-project-in-rstudio
-  usethis::create_project(path,
-                          check_name = FALSE)
+  usethis::create_project(path)
   
   message("Adding RStudio project file to ", path)
   
