@@ -1,12 +1,18 @@
 ## 1.1 Add dependencies
 
 pkgs <- c(
+  "bslib",
+  "visNetwork",
+  "tidyverse",
   "dashboardthemes",
+  "datasets", #for mtcars and other example data
   "devtools",
   "dplyr",
   "lubridate",
+  "ggplot2",
   "golem",
   "pins",
+  "plotly",
   "shiny",
   "shinyjs",
   "shinyWidgets",
