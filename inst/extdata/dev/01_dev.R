@@ -4,7 +4,6 @@ pkgs <- c(
   "bslib",
   "visNetwork",
   "tidyverse",
-  "dashboardthemes",
   "datasets", #for mtcars and other example data
   "devtools",
   "dplyr",
@@ -13,6 +12,7 @@ pkgs <- c(
   "golem",
   "pins",
   "plotly",
+  "sass",
   "shiny",
   "shinyjs",
   "shinyWidgets",
