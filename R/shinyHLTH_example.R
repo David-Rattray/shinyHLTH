@@ -11,9 +11,15 @@
 #'  shinyHLTH_example()
 #'
 #' }
-shinyHLTH_example <- function() { # nocov start
+# shinyHLTH_example <- function() { # nocov start
+#   if (!requireNamespace(package = "shinydashboard"))
+#     message("Package 'shinydashboard' is required to run this function")
+#   shiny::shinyAppDir(system.file("examples/demo_dash", package = "shinyHLTH", mustWork = TRUE))
+# }
+# nocov end
+shinyHLTH_example <- function(example = "demo_dash") { # nocov start
   if (!requireNamespace(package = "shinydashboard"))
     message("Package 'shinydashboard' is required to run this function")
-  shiny::shinyAppDir(system.file("examples/demo_dash", package = "shinyHLTH", mustWork = TRUE))
+  choice <- paste0("examples/", example)
+  shiny::shinyAppDir(system.file(choice, package = "shinyHLTH", mustWork = TRUE))
 }
-# nocov end
