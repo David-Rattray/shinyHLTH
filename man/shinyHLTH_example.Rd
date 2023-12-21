@@ -2,7 +2,7 @@
 % Please edit documentation in R/shinyHLTH_example.R
 \name{shinyHLTH_example}
 \alias{shinyHLTH_example}
-\title{Launch a small graveler example}
+\title{Launch an example dashboard}
 \usage{
 shinyHLTH_example()
 }
@@ -12,7 +12,7 @@ A gallery of widgets available in the package.
 \examples{
 if (interactive()) {
 
- geodude_example()
+ shinyHLTH_example()
 
 }
 }

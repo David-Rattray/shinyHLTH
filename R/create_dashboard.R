@@ -3,7 +3,7 @@
 #' Creates golem directory and header from template info
 #'
 #' @export
-start_dashboard <- function(path,...) {
+create_dashboard <- function(path,...) {
   # ensure path exists
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
 
