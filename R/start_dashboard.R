@@ -6,12 +6,6 @@
 start_dashboard <- function(path,...) {
   # ensure path exists
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
-  
-  usethis::create_project(path,
-                          rstudio = rstudioapi::isAvailable(),
-                          roxygen = TRUE,
-                          check_name = FALSE,
-                          open = rlang::is_interactive())
 
   file.copy( # copies shinyHLTH folder
     system.file("extdata/.", package = "shinyHLTH", mustWork = TRUE),
@@ -19,6 +13,12 @@ start_dashboard <- function(path,...) {
     recursive = TRUE
   )
 
+  # https://stackoverflow.com/questions/26126027/script-for-creating-a-new-project-in-rstudio
+  usethis::create_project(path,
+                          check_name = FALSE)
+  
+  message("Adding RStudio project file to ", path)
+  
   dots <- list(...)
 
   text_list <- list()
