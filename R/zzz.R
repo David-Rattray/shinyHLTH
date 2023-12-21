@@ -4,7 +4,7 @@ shinyHLTHStartupMessage <- function()
   msg <- c(paste0(
     packageVersion("shinyHLTH")),
     "\nWelcome to the shinyHLTH package",
-    "n\Use start_dashboard() to begin creating a new dashboard")
+    "\nUse start_dashboard() to begin creating a new dashboard")
   return(msg)
 }
 
