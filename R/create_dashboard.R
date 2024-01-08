@@ -11,7 +11,7 @@ create_dashboard <- function(path) {
 
   # Copies basic file structure to path
   file.copy(
-    system.file("extdata/.", package = "shinyHLTH", mustWork = TRUE),
+    system.file("demodashboard/.", package = "shinyHLTH", mustWork = TRUE),
     path,
     recursive = TRUE
   )
