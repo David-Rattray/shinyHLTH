@@ -1,7 +1,7 @@
 replace_package_name <- function(
     copied_files,
     package_name,
-    path_to_golem
+    path_to_dir
 ) {
   # Going through copied files to replace package name
   for (f in copied_files) {
