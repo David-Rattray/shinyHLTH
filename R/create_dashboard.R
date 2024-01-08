@@ -41,6 +41,9 @@ create_dashboard <- function(path) {
   } else {
     stop("Directory Specified Already Exists")
   }
+  golem::set_golem_name(pkg_name)
+  
+  rstudioapi::navigateToFile("dev/run_dev.R")
 }
 # 
 # Version: 1.0

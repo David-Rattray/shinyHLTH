@@ -4,7 +4,7 @@
 \alias{shinyHLTH_example}
 \title{Launch an example dashboard}
 \usage{
-shinyHLTH_example()
+shinyHLTH_example(example = "demo_dash")
 }
 \description{
 A gallery of widgets available in the package.
