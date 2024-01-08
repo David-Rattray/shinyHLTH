@@ -27,18 +27,7 @@ create_dashboard <- function(path) {
       open = FALSE
     )
     
-    copied_files <- list.files(
-      path = system.file("demodashboard/.", package = "shinyHLTH", mustWork = TRUE),
-      full.names = FALSE,
-      all.files = TRUE,
-      recursive = TRUE
-    )
     
-    replace_package_name(
-      copied_files,
-      package_name,
-      path_to_dir
-    )
   } else {
     stop("Directory Specified Already Exists")
   }

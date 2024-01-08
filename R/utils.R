@@ -1,36 +1,18 @@
-replace_package_name <- function(
-    copied_files,
-    package_name,
-    path_to_dir
-) {
-  # Going through copied files to replace package name
-  for (f in copied_files) {
+updateFilenames <- function(path_to_dir, pkg_name) {
+  files_to_change <- c("R/app_config.R", "inst/golem-config.yml")
+  for (f in files_to_change) {
     copied_file <- file.path(path_to_dir, f)
-    
-    if (grepl("^REMOVEME", f)) {
-      file.rename(
-        from = copied_file,
-        to = file.path(path_to_dir, gsub("REMOVEME", "", f))
-      )
-      copied_file <- file.path(path_to_dir, gsub("REMOVEME", "", f))
-    }
-    
-    if (!grepl("ico$", copied_file)) {
-      try(
-        {
-          replace_word(
-            file = copied_file,
-            pattern = "demodashboard",
-            replace = package_name
-          )
-        },
-        silent = TRUE
-      )
-    }
+    tx <- readLines(copied_file)
+    tx2 <- gsub(
+      pattern = "demodashboard",
+      replacement = pkg_name,
+      x = tx)
+    writeLines(
+      tx2,
+      con = copied_file
+    )
   }
 }
-
- 
 # 
 # 
 # check_dev_deps_are_installed()

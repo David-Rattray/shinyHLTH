@@ -1,5 +1,5 @@
 default:
-  golem_name: shinyexample
+  golem_name: demodashboard
   golem_version: 0.0.0.9000
   app_prod: no
 
