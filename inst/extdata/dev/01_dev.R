@@ -1,9 +1,9 @@
 ## 1.1 Add dependencies
 
 pkgs <- c(
+  "bcmaps",
   "bslib",
-  "visNetwork",
-  "tidyverse",
+  "bsicons",
   "datasets", #for mtcars and other example data
   "devtools",
   "dplyr",
@@ -13,11 +13,7 @@ pkgs <- c(
   "pins",
   "plotly",
   "sass",
-  "shiny",
-  "shinyjs",
-  "shinyWidgets",
-  "shinydashboard",
-  "shinydashboardPlus"
+  "shiny"
 )
 
 for (i in pkgs) {
