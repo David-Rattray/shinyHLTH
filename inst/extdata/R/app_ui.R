@@ -4,7 +4,7 @@ app_ui <- function() {
     # golem_add_external_resources()
   # )
   fluidPage(
-    theme = dashboard_theme,
+    theme = dashboard_theme(),
     header(),
     body()
   )

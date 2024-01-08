@@ -12,6 +12,7 @@ pkgs <- c(
   "golem",
   "pins",
   "plotly",
+  "rclipboard",
   "sass",
   "shiny"
 )

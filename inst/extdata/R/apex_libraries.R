@@ -11,9 +11,10 @@ pkgs <- c(
   "golem",
   "pins",
   "plotly",
+  "rclipboard",
   "sass",
   "shiny"
-  )
+)
 
 for (i in pkgs) {
   library(i, character.only = TRUE)

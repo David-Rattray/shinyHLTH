@@ -7,11 +7,11 @@ Cohort_data <- tibble::tibble(
   age = rnorm(10000, mean = 65, sd = 10)
 )
 
-Cohort_data <- Cohort_data %>% 
-  mutate(age = round(age, digits = 0)) %>% 
+Cohort_data <- Cohort_data %>%
+  mutate(age = round(age, digits = 0)) %>%
   mutate(age_group = case_when(age >= 65 ~ "Senior",
                                age <=64 ~ "non-Senior"))
-  
+
 #usethis::use_data(Cohort_data, overwrite = TRUE)
 
 save("Cohort_data", file = "./data/Cohort_data.rda")
