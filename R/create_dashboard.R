@@ -22,7 +22,7 @@ create_dashboard <- function(path) {
       path,
       recursive = TRUE
     )
-    usethis_create_project(
+    usethis::create_project(
       path = path_to_dir,
       open = FALSE
     )
