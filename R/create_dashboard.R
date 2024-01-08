@@ -19,7 +19,7 @@ create_dashboard <- function(path) {
     # Copies basic file structure to path
     file.copy(
       system.file("demodashboard/.", package = "shinyHLTH", mustWork = TRUE),
-      path,
+      path_to_dir,
       recursive = TRUE
     )
     updateFilenames(path_to_dir, pkg_name)
@@ -39,7 +39,7 @@ create_dashboard <- function(path) {
       "Encoding: UTF-8",
       "LazyData: true"
     )
-    writeLines(contents, con = file.path(path, "DESCRIPTION"))
+    writeLines(contents, con = file.path(path_to_dir, "DESCRIPTION"))
     
   } else {
     stop("Directory Specified Already Exists")
@@ -59,17 +59,7 @@ create_dashboard <- function(path) {
 #     
 #     pkg_name <- tail(unlist(strsplit(path, "/")), 1)
 #     
-    # Create basic DESCRIPTION file
-    contents <- c(
-      paste("Package:", pkg_name),
-      paste("Title:"),
-      "Version: 0.0.0",
-      paste("Author:"),
-      paste("Maintainer:"),
-      "Description: Your Description Here",
-      "Encoding: UTF-8",
-      "LazyData: true"
-    )
+# Create basic DESCRIPTION file
 #     
 #     writeLines(contents, con = file.path(path, "DESCRIPTION"))
 #   } else {
