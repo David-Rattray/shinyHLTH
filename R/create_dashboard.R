@@ -24,10 +24,6 @@ create_dashboard <- function(path) {
     )
     updateFilenames(path_to_dir, pkg_name)
     
-    usethis::create_project(
-      path = path_to_dir,
-      open = FALSE
-    )
     # Create basic DESCRIPTION file
     contents <- c(
       paste("Package:", pkg_name),
@@ -40,6 +36,13 @@ create_dashboard <- function(path) {
       "LazyData: true"
     )
     writeLines(contents, con = file.path(path_to_dir, "DESCRIPTION"))
+    
+    usethis::create_project(
+      path = path_to_dir,
+      open = TRUE
+    )
+    
+    rstudioapi::navigateToFile("dev/run_dev.R")
     
   } else {
     stop("Directory Specified Already Exists")
