@@ -5,7 +5,9 @@
 #' @export
 create_dashboard <- function(path) {
   # ensure path exists
-  dir.create(path, recursive = TRUE, showWarnings = FALSE)
+  if(dir.exists(path) == FALSE) {
+    
+  dir.create(path, recursive = FALSE, showWarnings = FALSE)
 
   # Copies basic file structure to path
   file.copy(
@@ -36,7 +38,9 @@ create_dashboard <- function(path) {
   )
   
   writeLines(contents, con = file.path(path, "DESCRIPTION"))
-
+  } else {
+    stop("Directory Specified Already Exists")
+  }
 }
 # 
 # Version: 1.0
