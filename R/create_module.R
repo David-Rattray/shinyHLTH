@@ -49,6 +49,7 @@ create_module <- function(name, pkg = getwd(), open = TRUE, dir_create = TRUE){
   write_there("\t\t\t, width = 2 # sidebarlayout and mainPanel widths must add up to 12")
   write_there("\t\t),")
   write_there("\tmainPanel(")
+  write_there('\t\t\tp("put mainpanel items here")')
   write_there("\t, width = 10")
   write_there("\t\t)")
   write_there("\t)")
@@ -63,11 +64,11 @@ create_module <- function(name, pkg = getwd(), open = TRUE, dir_create = TRUE){
   write_there("}")
   write_there(" ")
   write_there("## copy to body.R")
-  write_there(glue("# nav_panel(%label_name%,
-                   %mod_name%UI(\"%mod_name%\")"))
+  write_there(glue("# nav_panel(%label_name%,"))
+  write_there(glue("/t# %mod_name%UI(\"%mod_name%\")"))
   write_there(" ")
   write_there("## copy to app_server.R")
-  write_there(glue("# %mod_name%Server, (\"%mod_name%\")"))
+  write_there(glue("# %mod_name%Server(\"%mod_name%\")"))
   write_there(" ")
 
   golem::add_fct("display", module = mod_name)
