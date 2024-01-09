@@ -4,7 +4,7 @@
 \alias{create_module}
 \title{Creates module of the specified name}
 \usage{
-create_module(name, pkg = get_wd(), open = TRUE, dir_create = TRUE)
+create_module(name, pkg = getwd(), open = TRUE, dir_create = TRUE)
 }
 \description{
 Creates module of the specified name

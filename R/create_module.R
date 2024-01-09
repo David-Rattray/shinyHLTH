@@ -5,7 +5,12 @@
 create_module <- function(name, pkg = getwd(), open = TRUE, dir_create = TRUE){
   library(golem)
   library(cli)
-
+  
+  mod_name <- tolower(name)
+  label_name <- paste(toupper(substring(name, 1, 1)),
+                      tolower(substring(name, 2, nchar(name))),
+                      sep = "")
+  
   old <- setwd(normalizePath(pkg))
   on.exit(setwd(old))
 
@@ -34,36 +39,38 @@ create_module <- function(name, pkg = getwd(), open = TRUE, dir_create = TRUE){
 
   write_there("# Module UI")
   write_there(" ")
-  write_there(glue("#' @title mod_%name%_ui and mod_%name%_server"))
+  write_there(glue("#' @title %mod_name%UI and %mod_name%Server"))
   write_there("#' @description A shiny module.")
   write_there(" ")
-  write_there(glue("mod_%name%_ui <- function(id) {"))
-  write_there("\tns <- NS(id)")
-  write_there("\ttabItem(")
-  write_there(glue("\t\ttabName = \"%name%\","))
-  write_there("\t\tfluidRow(")
-  write_there("\t\t\t")
-  write_there("\t\t)")
+  write_there(glue('%mod_name%UI <- function(id, label = "%label_name%") {'))
+  write_there("\tsidebarLayout(")
+  write_there("\tsidebarPanel(")
+  write_there(glue('\t\tp("put sidebar items here)'))
+  write_there("\t\t, width = 2 # sidebarlayout and mainPanel widths must add up to 12")
+  write_there("\t\t),")
+  write_there("\tmainPanel(")
+  write_there("\t, width = 10")
+  write_there("\t)")
   write_there("\t)")
   write_there("}")
   write_there(" ")
   write_there("# Module Server")
   write_there(" ")
-  write_there(glue("mod_%name%_server <- function(input, output, session) {"))
-  write_there("\tns <- session$ns")
+  write_there(glue("%mod_name%Server <- function(id) {
+                   moduleServer(id, function(input, output, session) {"))
+  write_there("}")
+  write_there(")")
   write_there("}")
   write_there(" ")
   write_there("## copy to body.R")
-  write_there(glue("# mod_%name%_ui(\"%name%_ui_1\")"))
+  write_there(glue("# nav_panel(%label_name%,
+                   %mod_name%UI(\"%mod_name%\")"))
   write_there(" ")
   write_there("## copy to app_server.R")
-  write_there(glue("# callModule(mod_%name%_server, \"%name%_ui_1\")"))
-  write_there(" ")
-  write_there("## copy to sidebar.R")
-  write_there(glue("# menuItem(\"displayName\",tabName = \"%name%\",icon = icon(\"user\"))"))
+  write_there(glue("# %mod_name%Server, (\"%mod_name%\")"))
   write_there(" ")
 
-  golem::add_fct("display", module = name)
+  golem::add_fct("display", module = mod_name)
 
   cat_green_tick(glue("Files created at %where%"))
 
