@@ -42,15 +42,17 @@ create_dashboard <- function(path) {
     writeLines(contents, con = file.path(path_to_dir, "DESCRIPTION"))
     
    
-    
-    rstudioapi::navigateToFile(file.path(path_to_dir, "dev/run_dev.R"))
+    # was hoping to make it open the run_dev script when the new project launches
+    # rstudioapi::navigateToFile(file.path(path_to_dir, "dev/run_dev.R"))
     
   } else {
     stop("Directory Specified Already Exists")
   }
 }
 
-#   
+#  https://github.com/ghcarlalan/graveler/blob/main/inst/rstudio/templates/project/graveler_dashboard.dcf
+# https://rstudio.github.io/rstudio-extensions/rstudio_project_templates.html
+# https://rstudio4edu.github.io/rstudio4edu-book/proj-templates.html
 
 #    
 #     # Create Rproject in the specified path
