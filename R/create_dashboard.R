@@ -42,7 +42,7 @@
 create_dashboard <- function(
     path,
     pkg_name = basename(path),
-    project_hook = shinyHLTH::project_hook,
+    #project_hook = shinyHLTH::project_hook,
     open = TRUE,
     ...) {
   
@@ -69,7 +69,7 @@ create_dashboard <- function(
     
     usethis::create_project(
       path = path_to_dir,
-      open = FALSE
+      open = TRUE
     )
     # Create basic DESCRIPTION file
     contents <- c(
@@ -83,30 +83,32 @@ create_dashboard <- function(
       "LazyData: true"
     )
     writeLines(contents, con = file.path(path_to_dir, "DESCRIPTION"))
-    
+  
+    # having an issue where create_module isn't finding the wd set  
+   options("golem.wd" = path_to_dir)
    
     # was hoping to make it open the run_dev script when the new project launches
     # rstudioapi::navigateToFile(file.path(path_to_dir, "dev/run_dev.R"))
     
     # opening project after creation. Maybe there will be options here to open the scripts
     
-    if (isTRUE(open)) {
-      if (
-        rlang::is_installed("rstudioapi") &&
-        rstudioapi::isAvailable() &&
-        rstudioapi::hasFun("openProject")
-      ) {
-        rstudioapi::openProject(path = path_to_dir)
-      } else {
-        setwd(path_to_dir)
-      }
-    }
+    # if (isTRUE(open)) {
+    #   if (
+    #     rlang::is_installed("rstudioapi") &&
+    #     rstudioapi::isAvailable() &&
+    #     rstudioapi::hasFun("openProject")
+    #   ) {
+    #     rstudioapi::openProject(path = path_to_dir)
+    #   } else {
+    #     setwd(path_to_dir)
+    #   }
+    # }
   # Not sure what the point is of this from golem just yet  
-    return(
-      invisible(
-        path_to_dir
-      )
-    )
+    # return(
+    #   invisible(
+    #     path_to_dir
+    #   )
+    # )
     
   } else {
     stop("Directory Specified Already Exists")

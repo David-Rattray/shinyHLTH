@@ -2,7 +2,7 @@
 #'
 #' @export
 
-create_module <- function(name, pkg = get_wd(), open = TRUE, dir_create = TRUE){
+create_module <- function(name, pkg = getwd(), open = TRUE, dir_create = TRUE){
   library(golem)
   library(cli)
 
