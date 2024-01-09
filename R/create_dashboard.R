@@ -42,7 +42,7 @@ create_dashboard <- function(path) {
       open = TRUE
     )
     
-    rstudioapi::navigateToFile("dev/run_dev.R")
+    rstudioapi::navigateToFile(paste0(path_to_dir, "dev/run_dev.R"))
     
   } else {
     stop("Directory Specified Already Exists")
