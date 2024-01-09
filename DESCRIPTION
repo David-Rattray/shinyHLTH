@@ -3,6 +3,7 @@ Title: Guides development of R Shiny Dashboards within HSPP guidelines
 Version: 0.1
 Author: David Rattray <david.rattray@gov.bc.ca> [aut, cre]
 Maintainer: David Rattray <david.rattray@gov.bc.ca>
+Depends: R (>= 3.5.0)
 Description: Modified version of the graveler Wrapper for {golem} that automates dashboard file generation.
 License: MIT + file LICENSE
 URL: https://github.com/David-Rattray/shinyHLTH
@@ -14,4 +15,5 @@ Imports:
     dashboardthemes (>= 1.1.5),
     shinydashboardPlus (>= 0.7.5),
     bslib (>= 0.5.1),
-    shiny (>= 1.8.0)
+    shiny (>= 1.8.0),
+    yaml (>= 2.3.8)

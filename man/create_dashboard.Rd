@@ -2,10 +2,43 @@
 % Please edit documentation in R/create_dashboard.R
 \name{create_dashboard}
 \alias{create_dashboard}
-\title{Golem dashboard backend}
+\title{Create a package for a Shiny App using `{golem}`}
 \usage{
-create_dashboard(path)
+create_dashboard(path, pkg_name = basename(path), open = TRUE, ...)
+}
+\arguments{
+\item{path}{Name of the folder to create the package in.
+This will also be used as the package name.}
+
+\item{open}{Boolean. Open the created project?}
+
+\item{...}{Arguments passed to the `project_hook()` function.}
+
+\item{check_name}{Should we check that the package name is
+correct according to CRAN requirements.}
+
+\item{overwrite}{Boolean. Should the already existing project be overwritten ?}
+
+\item{package_name}{Package name to use. By default, {golem} uses
+`basename(path)`. If `path == '.'` & `package_name` is
+not explicitly set, then `basename(getwd())` will be used.}
+
+\item{without_comments}{Boolean. Start project without golem comments}
+
+\item{project_hook}{A function executed as a hook after project
+creation. Can be used to change the default `{golem}` structure.
+to override the files and content. This function is executed just
+after the project is created.}
+
+\item{with_git}{Boolean. Initialize git repository}
+}
+\value{
+The path, invisibly.
 }
 \description{
-Creates golem directory and header from template info
+Create a package for a Shiny App using `{golem}`
+}
+\note{
+For compatibility issue, this function turns `options(shiny.autoload.r)`
+to `FALSE`. See https://github.com/ThinkR-open/golem/issues/468 for more background.
 }

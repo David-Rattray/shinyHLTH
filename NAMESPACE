@@ -2,5 +2,8 @@
 
 export(create_dashboard)
 export(create_module)
+export(project_hook)
 export(shinyHLTH_example)
 importFrom(shiny,shinyAppDir)
+importFrom(utils,getFromNamespace)
+importFrom(yaml,write_yaml)

@@ -1,5 +1,4 @@
-get_wd <- function ()
-{
+get_wd <- function () {
   if (is.null(getOption("golem.wd"))) {
     cat_red_bullet("Couldn't find golem working directory")
     cat_green_tick("Definining golem working directory as `.`")

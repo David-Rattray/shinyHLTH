@@ -1,3 +1,8 @@
+#' updateFilenames
+#'
+#' 
+#' 
+#'
 updateFilenames <- function(path_to_dir, pkg_name) {
   files_to_change <- c("R/app_config.R", "inst/golem-config.yml")
   for (f in files_to_change) {
@@ -12,6 +17,29 @@ updateFilenames <- function(path_to_dir, pkg_name) {
       con = copied_file
     )
   }
+}
+
+#' Project Hook
+#'
+#' Project hooks allow to define a function run just after `{golem}`
+#' project creation.
+#'
+# @inheritParams create_dashboard # update to create_dashboard and check the info on that function
+#' @param ... Arguments passed from `create_dashboard()`, unused in the default
+#' function.
+#'
+#' @return Used for side effects
+#' @export
+#'
+#' @examples
+#' if (interactive()) {
+#'   my_proj <- function(...) {
+#'     unlink("dev/", TRUE, TRUE)
+#'   }
+#'   create_golem("ici", project_template = my_proj)
+#' }
+project_hook <- function(path, package_name, ...) {
+  return(TRUE)
 }
 # 
 # 
