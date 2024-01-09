@@ -42,6 +42,7 @@
 create_dashboard <- function(
     path,
     pkg_name = basename(path),
+    project_hook = shinyHLTH::project_hook,
     open = TRUE,
     ...) {
   

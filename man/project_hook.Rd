@@ -7,6 +7,13 @@
 project_hook(path, package_name, ...)
 }
 \arguments{
+\item{path}{Name of the folder to create the package in.
+This will also be used as the package name.}
+
+\item{package_name}{Package name to use. By default, {golem} uses
+`basename(path)`. If `path == '.'` & `package_name` is
+not explicitly set, then `basename(getwd())` will be used.}
+
 \item{...}{Arguments passed from `create_dashboard()`, unused in the default
 function.}
 }

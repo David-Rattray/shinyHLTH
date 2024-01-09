@@ -24,7 +24,7 @@ updateFilenames <- function(path_to_dir, pkg_name) {
 #' Project hooks allow to define a function run just after `{golem}`
 #' project creation.
 #'
-# @inheritParams create_dashboard # update to create_dashboard and check the info on that function
+#' @inheritParams create_dashboard 
 #' @param ... Arguments passed from `create_dashboard()`, unused in the default
 #' function.
 #'
@@ -39,6 +39,9 @@ updateFilenames <- function(path_to_dir, pkg_name) {
 #'   create_golem("ici", project_template = my_proj)
 #' }
 project_hook <- function(path, package_name, ...) {
+  message("Welcome")
+  # options <- (golem.wd = path)
+  # rstudioapi::navigateToFile(file.path(path, "dev/run_dev.R"))
   return(TRUE)
 }
 # 
