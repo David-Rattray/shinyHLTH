@@ -1,7 +1,8 @@
 header <- function() {
   card(id = "main-header",
        card_header(id = "main-header-card",
-                   card_image("www/HSIAR-Logo.png",
+                   card_image(file = NULL,
+                              src = "www/HSIAR-Logo.png",
                               border_radius = "none",
                               class = "header-image",
                               fill = TRUE,

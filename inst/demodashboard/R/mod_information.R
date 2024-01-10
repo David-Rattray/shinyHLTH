@@ -6,11 +6,10 @@
 
 informationUI <- function(id, label = "Information") {
   layout_columns(
-    # tags$style('div[data-value="Plot"]{
-    #              height: 400px;
-    #              background-image: url(https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_960_720.jpg);
+    ## tags$style('div[data-value="Information"]{
+    #             background-image: url(https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_960_720.jpg);
     #            }'
-    #            ),
+    #            ), This setup works
     value_box(
       title = "How to cite this report?",
       value = textOutput(NS(id, "report_citation")),
@@ -18,7 +17,10 @@ informationUI <- function(id, label = "Information") {
       showcase_layout = "top right",
       max_height = "200px",
       class = "citation-box"
-    )
+    ),
+    height = "100%",
+    # ,
+    # class = "info-page"
   )
 }
 

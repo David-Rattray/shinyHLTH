@@ -77,6 +77,8 @@ $border-radius: 0px;
   --#{$prefix}card-border-radius: $border-radius;
   --#{$prefix}card-inner-border-radius: $border-radius;
   padding: 0 0 0 0;
-  //background-image: url("BC-gov-logo-information-page-background.png");
-  //background-color: #3EB489;
+  background-image: url("../www/BC-gov-logo-background.png");
+  // https://stackoverflow.com/questions/14519388/can-i-use-an-image-from-my-local-file-system-as-background-in-html
+  // https://stackoverflow.com/questions/20047364/how-to-give-the-background-image-path-in-css
+  // background-color: #3EB489;
 }

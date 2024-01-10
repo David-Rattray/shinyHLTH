@@ -12,6 +12,11 @@ golem_add_external_resources <- function(){
   add_resource_path(
     'www', app_sys('app/www')
   )
+  tags$head(
+    bundle_resources(
+      path = app_sys('app/www'),
+      app_title = 'cooldashboard_v3'
+    )
 }
 
 

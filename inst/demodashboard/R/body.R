@@ -6,7 +6,8 @@ body <- function() {
                     nav_panel("Geography",
                               geographyUI("geography")),
                     nav_panel("Information",
-                              informationUI("information"))
+                              informationUI("information"),
+                              class = "info-page"))
     )
     , class = "main-page")
 }
